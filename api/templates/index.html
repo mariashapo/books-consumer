@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Finder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #5D5C61;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #3F72AF 3px solid;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+            text-align: center;
+        }
+        header li {
+            display: inline;
+            margin: 0 15px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        header .highlight, header .current a {
+            color: #3F72AF;
+            font-weight: bold;
+        }
+        header a:hover {
+            color: #3F72AF;
+            font-weight: bold;
+        }
+        .book-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .book {
+            background: #fff;
+            color: #333;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .book h3 {
+            color: #3F72AF;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Book</span> Finder</h1>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1 class="centered">Book Search Results</h1>
+        <div class="search-params">
+            <p>Filtered by:</p>
+            <p><strong>Genre:</strong> {{ params['genre'] or 'Any' }}</p>
+            <p><strong>Author:</strong> {{ params['author'] or 'Any' }}</p>
+            <p><strong>Title:</strong> {{ params['title'] or 'Any' }}</p>
+        </div>
+        <ul class="book-list">
+            {% for book in books %}
+                <li class="book">
+                    <h3>{{ book.title }}</h3>
+                    <p><strong>Author:</strong> {{ book.author }}</p>
+                    <p><strong>Genre:</strong> {{ book.genre }}</p>
+                    <p><strong>Publication Year:</strong> {{ book.publication_year }}</p>
+                    <p><strong>Title:</strong> {{ book.title }}</p>
+                </li>
+            {% else %}
+                <p>No books found matching the criteria.</p>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

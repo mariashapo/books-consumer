@@ -1,0 +1,61 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+header {
+    background: #5D5C61;
+    color: #fff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #3F72AF 3px solid;
+}
+header h1 {
+    margin: 0;
+    text-align: center;
+}
+.search-form, .search-results {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.search-form label, .search-form input {
+    margin-bottom: 10px;
+}
+.search-form input[type="text"] {
+    padding: 8px;
+    width: calc(100% - 20px);
+    margin-bottom: 20px;
+}
+.search-form input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #3F72AF;
+    color: white;
+    border: 0;
+    cursor: pointer;
+}
+.search-form input[type="submit"]:hover {
+    background-color: #5D5C61;
+}
+.book-list {
+    list-style-type: none;
+    padding: 0;
+}
+.book {
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+}
+.book h3 {
+    color: #3F72AF;
+}
+

@@ -1,7 +1,5 @@
 FROM python
 
-# Set the working directory in the container to /api
-
 # Copy the requirements.txt file into the container
 COPY requirements.txt .
 
